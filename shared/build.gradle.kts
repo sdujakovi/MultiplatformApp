@@ -9,7 +9,7 @@ version = "1.0"
 
 val ktorVersion = "2.0.3"
 val koinVersion = "3.2.0"
-val coroutinesVersion = "1.6.4"
+val coroutinesVersion = "1.6.3-native-mt"
 val lifecycleVersion = "2.5.1"
 
 kotlin {
