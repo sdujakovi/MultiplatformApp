@@ -15,7 +15,8 @@ fun initKoin(appDeclaration: KoinAppDeclaration) =
         appDeclaration()
         modules(
             apiModule,
-            mapperModule
+            mapperModule,
+            repositoryModule
         )
     }
 
