@@ -15,6 +15,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven("https://dl.bintray.com/kotlin/exposed")
     }
 }
 
