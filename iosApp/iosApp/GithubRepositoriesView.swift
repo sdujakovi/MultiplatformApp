@@ -28,11 +28,21 @@ struct GithubRepositoriesView: View {
                     )
                     .navigationTitle("Search a Repository")
                     .background(Color(red: 255/255, green: 249/255, blue: 252/255))
-                    List(state.repositories, id: \.id) { repo in
-                        GithubRepositoryItem(image: (repo.owner?.avatarUrl)!, name: repo.name!, owner: repo.name!)
-                            .listRowSeparator(.hidden)
+                    if(state.anyUseCaseInProgres.boolValue) {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .scaleEffect(3)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .tint(Color(red: 239/255, green: 223/255, blue: 246/255))
+                            .background(Color(red: 255/255, green: 249/255, blue: 252/255))
+                    } else {
+                        List(state.repositories, id: \.id) { repo in
+                            GithubRepositoryItem(image: (repo.owner?.avatarUrl)!, name: repo.name!, owner: repo.name!)
+                                .listRowSeparator(.hidden)
+                        }
+                        .listStyle(PlainListStyle())
+                        .background(Color(red: 255/255, green: 249/255, blue: 252/255))
                     }
-                    .listStyle(PlainListStyle())
                 }
             }
     }
@@ -59,7 +69,13 @@ struct SearchBar: UIViewRepresentable {
         
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             text = searchText
+            //onTextChanged(text)
+        }
+        
+        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            //text = searchText
             onTextChanged(text)
+            searchBar.resignFirstResponder()
         }
     }
     
@@ -76,6 +92,7 @@ struct SearchBar: UIViewRepresentable {
         searchBar.barStyle = UIBarStyle.black
         searchBar.barTintColor = UIColor.black
         searchBar.searchTextField.backgroundColor = UIColor(Color(red: 239/255, green: 223/255, blue: 246/255))
+        searchBar.layer.shadowRadius = 8
         
         return searchBar
     }

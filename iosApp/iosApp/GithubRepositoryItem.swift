@@ -24,7 +24,7 @@ struct GithubRepositoryItem: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 70)
-                            .cornerRadius(20)
+                            .cornerRadius(18)
                             .padding(.trailing)
             
             VStack(alignment: .leading) {
@@ -43,9 +43,8 @@ struct GithubRepositoryItem: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .center)
-        
         .background(Color(red: 230/255, green: 246/255, blue: 223/255))
-        .cornerRadius(20)
+        .cornerRadius(18)
         .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 0)
         .padding(.all, 5)
         .compositingGroup()
