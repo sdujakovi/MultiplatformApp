@@ -93,6 +93,7 @@ struct SearchBar: UIViewRepresentable {
         searchBar.barTintColor = UIColor.black
         searchBar.searchTextField.backgroundColor = UIColor(Color(red: 239/255, green: 223/255, blue: 246/255))
         searchBar.layer.shadowRadius = 8
+        searchBar.placeholder = "Search a repo..."
         
         return searchBar
     }
