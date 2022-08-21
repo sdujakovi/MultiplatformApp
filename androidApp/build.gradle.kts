@@ -56,6 +56,7 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:$composeNavVersion")
     implementation("androidx.activity:activity-compose:$composeActVersion")
     implementation("io.coil-kt:coil-compose:$composeCoilVersion")
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.23.1")
 
     // Koin
     implementation("io.insert-koin:koin-android:$koinVersion")
