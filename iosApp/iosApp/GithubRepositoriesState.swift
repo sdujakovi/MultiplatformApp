@@ -21,6 +21,10 @@ class GithubRepositoriesState: ObservableObject{
         }
     }
     
+    func searchRep(searchText: String){
+        viewModel.getGithubRepositories(query: searchText)
+    }
+    
     deinit {
         viewModel.dispose()
     }

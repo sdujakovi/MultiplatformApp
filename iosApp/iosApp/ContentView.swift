@@ -5,7 +5,7 @@ struct ContentView: View {
 	let greet = "Stanko"
 
 	var body: some View {
-        VStack{
+        ZStack{
             GithubRepositoriesView()
         }
 	}
