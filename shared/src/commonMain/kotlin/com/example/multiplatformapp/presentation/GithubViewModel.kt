@@ -31,7 +31,7 @@ class GithubViewModel(private val query: String) : MainDispatcher(), KoinCompone
         coroutineScope.launch {
             try {
                 _anyUseCaseInProgress.value = true
-                _repositories.value = githubRepository.getGithubRepositories(query)
+                if (query.isNotEmpty()) _repositories.value = githubRepository.getGithubRepositories(query)
             } catch (cause: Throwable) {
                 _anyUseCaseFailure.value = cause
             } finally {
