@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                val viewModel = remember { GithubViewModel("sdu") }
+                val viewModel = remember { GithubViewModel("") }
                 val repos by viewModel.repositories.collectAsState()
                 val loading by viewModel.anyUseCaseInProgress.collectAsState()
                 val systemUiController = rememberSystemUiController()
